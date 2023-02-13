@@ -1,0 +1,11 @@
+.vscode/
+.DS_Store
+.history/
+.trunk/
+
+.terraform/
+terraform.tfstate.d/
+.terraform.lock.hcl
+
+
+
