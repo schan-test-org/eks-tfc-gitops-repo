@@ -48,7 +48,6 @@ data "terraform_remote_state" "vpc" {
       name = "dev-vpc-tfc"
     }
   }
-
 }
 
 data "terraform_remote_state" "network" {

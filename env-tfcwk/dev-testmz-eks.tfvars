@@ -3,6 +3,7 @@
 ########################################
 project     = "dev-eks-prj"
 aws_region  = "ap-northeast-2"
+env = "dev"
 
 default_tags = {
   dept  = "DEVOPS/TERRAFORM-CLOUD-GITOPS-TESTING"
@@ -13,22 +14,22 @@ key_pair_name = "eks-t"
 ########################################
 # workspace setting
 ########################################
-env = "dev"
+
 
 ########################################
 # network setting
 ########################################
-# vpc_id             = "vpc-0e8acf616f7d0dd34"
-# private_subnet_ids = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
+vpc_id             = "vpc-0e8acf616f7d0dd34"
+private_subnet_ids = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
 # public_subnet_ids = ["subnet-07a3134a83f86b63e", "subnet-0cb20360ee7b5c56c"]
 
-vpc_id             = ""
-private_subnet_ids = []
+# vpc_id             = ""
+# private_subnet_ids = []
 
 ########################################
 # eks cluster
 ########################################
-eks_cluster_name        = "devtest-eks"
+eks_cluster_name        = "test-deveks"
 eks_cluster_version     = "1.24"
 endpoint_public_access  = true
 endpoint_private_access = true
