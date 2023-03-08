@@ -21,7 +21,7 @@ key_pair_name = "eks-t"
 ########################################
 vpc_id             = "vpc-0e8acf616f7d0dd34"
 private_subnet_ids = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
-public_subnet_ids = ["subnet-0fbc809bfc2f2760e", "subnet-09ab27b079a2aa375"]
+# public_subnet_ids = ["subnet-0fbc809bfc2f2760e", "subnet-09ab27b079a2aa375"]
 
 # vpc_id             = ""
 # private_subnet_ids = []
