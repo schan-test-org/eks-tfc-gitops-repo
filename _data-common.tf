@@ -38,17 +38,17 @@ data "aws_eks_cluster_auth" "existing_cluster" {
 }
 
 ############################# data : remote #######################################
-# data "terraform_remote_state" "vpc" {
-#   count = var.vpc_id == "" ? 1 : 0
+data "terraform_remote_state" "vpc" {
+  count = var.vpc_id == "" ? 1 : 0
 
-#   backend = "remote"
-#   config = {
-#     organization = "schan-test"
-#     workspaces = {
-#       name = "dev-vpc-tfc"
-#     }
-#   }
-# }
+  backend = "remote"
+  config = {
+    organization = "schan-test"
+    workspaces = {
+      name = "dev-vpc-tfc"
+    }
+  }
+}
 
 # data "terraform_remote_state" "network" {
 #   count = var.vpc_id == "" ? 1 : 0
