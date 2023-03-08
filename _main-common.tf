@@ -10,8 +10,10 @@ locals {
   })
 
   vpc_id                 = try(var.vpc_id, "") == "" ? data.terraform_remote_state.vpc.0.outputs.vpc_id : var.vpc_id
-  k8s_private_subnet_ids = length(var.private_subnet_ids) == 0 ? data.terraform_remote_state.network.0.outputs.eks_private_subnet_ids : var.private_subnet_ids
-  k8s_public_subnet_ids  = length(var.public_subnet_ids) == 0 ? data.terraform_remote_state.network.0.outputs.public_subnet_ids : var.public_subnet_ids
+  # k8s_private_subnet_ids = length(var.private_subnet_ids) == 0 ? data.terraform_remote_state.network.0.outputs.eks_private_subnet_ids : var.private_subnet_ids
+  # k8s_public_subnet_ids  = length(var.public_subnet_ids) == 0 ? data.terraform_remote_state.network.0.outputs.public_subnet_ids : var.public_subnet_ids
+  k8s_private_subnet_ids = var.private_subnet_ids
+  k8s_public_subnet_ids  = var.public_subnet_ids
 
   cluster_sg_ids   = try(var.additional_cluster_security_group_ids, [])
   nodegroup_sg_ids = concat([aws_security_group.nodegroup.id], [aws_security_group.shared.id], try(var.additional_nodegroup_security_group_ids, []))
