@@ -29,7 +29,7 @@ private_subnet_ids = ["subnet-0dea2a38484eed006", "subnet-0515d47ea98e7952e"]
 ########################################
 # eks cluster
 ########################################
-eks_cluster_name        = "test-deveks"
+eks_cluster_name        = "deveks-test"
 eks_cluster_version     = "1.24"
 endpoint_public_access  = true
 endpoint_private_access = true
