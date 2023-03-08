@@ -38,6 +38,14 @@ endpoint_private_access = true
 # cluster_service_ipv4_cidr = "172.20.0.0/16"
 # public_access_cidrs = ["0.0.0.0/0"]
 
+rbac_users = [
+  {
+    userarn  = "arn:aws:iam::524542846721:user/schan-kg"
+    username = "schan-kg"
+    usertype = "CLUSTER_ADMIN"
+  }
+]
+
 ########################################
 # eks node
 ########################################
