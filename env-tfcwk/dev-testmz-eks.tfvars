@@ -1,12 +1,12 @@
 ########################################
 # Common
 ########################################
-project     = "dev-eks-prj"
-aws_region  = "ap-northeast-2"
-env = "dev"
+project    = "dev-eks-prj"
+aws_region = "ap-northeast-2"
+env        = "dev"
 
 default_tags = {
-  dept  = "DEVOPS/TERRAFORM-CLOUD-GITOPS-TESTING"
+  dept = "DEVOPS/TERRAFORM-CLOUD-GITOPS-TESTING"
 }
 
 key_pair_name = "eks-t"
@@ -43,7 +43,7 @@ rbac_users = [
     userarn  = "arn:aws:iam::524542846721:user/schan-kg"
     username = "schan-kg"
     usertype = "CLUSTER_ADMIN"
-  },  
+  },
   {
     userarn  = "arn:aws:iam::524542846721:user/mz2"
     username = "mz2"
@@ -57,12 +57,13 @@ rbac_users = [
 
 eks_node_groups = {
   ops = {
-    "name"            = "ops"
-    "instance_type"   = "m6i.large"
+    "name"          = "ops"
+    "instance_type" = "t3.medium"
+    # "instance_type"   = "m6i.large"
     "instance_volume" = "30"
     "desired_size"    = 2
     "min_size"        = 2
-    "max_size"        = 3
+    "max_size"        = 11
     "description"     = "for operations"
     "labels" = {
       "role" = "ops"
@@ -77,12 +78,13 @@ eks_node_groups = {
   }
 
   apps = {
-    "name"            = "apps"
-    "instance_type"   = "r6i.xlarge"
+    "name"          = "apps"
+    "instance_type" = "t3.medium"
+    # "instance_type"   = "r6i.xlarge"
     "instance_volume" = "30"
-    "desired_size"    = 2
-    "min_size"        = 2
-    "max_size"        = 4
+    "desired_size"    = 1
+    "min_size"        = 1
+    "max_size"        = 12
     "description"     = "for apps"
     "labels" = {
       "role" = "apps"
