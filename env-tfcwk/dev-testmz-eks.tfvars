@@ -68,13 +68,14 @@ eks_node_groups = {
     "labels" = {
       "role" = "ops"
     }
-    "taints" = [
-      {
-        key    = "role"
-        value  = "ops"
-        effect = "NO_SCHEDULE"
-      },
-    ]
+    "taints" = []
+    # "taints" = [
+    #   {
+    #     key    = "role"
+    #     value  = "ops"
+    #     effect = "NO_SCHEDULE"
+    #   },
+    # ]
   }
 
   apps = {
